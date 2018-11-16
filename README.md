@@ -86,7 +86,8 @@ New RSS document written to ./rss.xml
 
 ##### New RSS document result
 The new RSS file (rss.xml) will look like this;
-```
+
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
@@ -125,7 +126,7 @@ Added new item to ./rss.xml
 ##### New items document result
 Here's the result of our `rss.xml` document after adding a new item;
 
-```
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
@@ -170,7 +171,7 @@ Since this is just a simple command-line script, we can also easily invoke it as
 
 We know our site details won't change, so it is simple as creating a shell script (.sh) and invoking the rssFeed.py from there. Create a shell script (`new_rss.sh`);
 
-```
+```bash
 #!/bin/bash
 
 url="http://example.com/rss.xml"
