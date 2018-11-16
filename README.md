@@ -3,7 +3,7 @@ A command-line RSS feeder written in Python.
 
 &nbsp;
 
-# Table of Content
+## Table of Content
 
 * **[What is!?](#what-is)**
 * **[How to?!](#how-to)**
