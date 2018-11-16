@@ -3,25 +3,40 @@ A command-line RSS feeder written in Python.
 
 &nbsp;
 
-## What is!?
-This is a script that makes it easy to create new rss.xml documents, and to add new items to that rss document. 
+# Table of Content
+
+* **[What is!?](#what-is)**
+* **[How to?!](#how-to)**
+* **[Examples](#examples)**
+  * [Create a new RSS (.xml) document](#exp1)
+    * [New RSS document result](#new-rss-document-result)
+  * [Add item to RSS feed](#exp2)
+    * [New items document result](#new-items-document-result)
+* **[Versatility](#versatility)**
+  * [Invoke from PHP](#exp3)
+  * [Invoke with Cron and Bash (.sh)](#exp4)
+
+&nbsp;
+
+## What is!? 
+This is a script that makes it easy to create new rss documents. And to add new items to that new rss document. 
 
 Distribute your web-content, up to date, to all your passionate followers! Not sure what RSS is all about? [Read up on w3schools](https://www.w3schools.com/XML/xml_rss.asp).
 
-This RSS feeder script allows your to create a new rss document where you; 
+**This RSS feeder script allows your to create a new rss document where you;**
 
 * define _the URL to the rss (.xml) file,_ 
 * provide a _title,_ 
 * and the _URL to your site,_ 
 * and a _short description of your site._
 
-Or you can add items to your feed (rss document) by;
+**Or you can add items to your feed (rss document) by;**
 
 * Defining a _title for your content,_
 * an _URL to your new content,_
 * and a _short description of the content._
 
-This script is command-line based, so all the values will be defined as options/parameters when invoking the script. This is to make the feeder versatile, and we are able to run it both from a command-line and from your web-code (See examples below).
+This script is command-line based, so all the values will be defined as options/parameters when invoking the script. This is to make the feeder versatile, and we are able to run it both from a command-line and from our web-code (See examples below).
 
 &nbsp;
 
@@ -52,7 +67,7 @@ New RSS Item:
 &nbsp;
 
 ### Examples
-#### Create a new RSS (.xml) document
+#### Create a new RSS (.xml) document <a name="exp1"></a>
 To create a blank, new rss document, 5 parameters is required; _URL_ (for rss), _title, link_ (for web-site), _description_ and _output_ (rss file path).
 
 include;
@@ -88,7 +103,7 @@ If you edit this file manually, there is no gurantee the RSS will be valid after
 
 &nbsp;
 
-#### Add item to RSS feed
+#### Add item to RSS feed  <a name="exp2"></a>
 To add new content to your RSS feed, there is 3 required parameters and 1 optional; A _title_ for the content, the _URL_ for the new content and a _short description_ of the content. 
 
 A 4th optional parameter is for the `<guid>` element. You can tell the RSS reader that this is a permanent link with the guid element. By default it is set to false and a timestamp will be set as the unique id. If you include the `-p` option, this will be treated as a perma-link and the URL for the content will be used.
@@ -100,7 +115,7 @@ Include;
 * -l --link  _The URL for the new content_
 * -d --description  _A short description for the content_
 * -o --output _The output file (the rss document)_
-* -p --perma __(OPTIONAL) If this content is permanently stored at this URL_
+* -p --perma _(OPTIONAL) If this content is permanently stored at this URL_
 
 ```
 $ python ./rssFeed.py -i -t "Item Title" -l http://example.com/articlle_05 -d "Item Description" -o ./rss.xml                            
@@ -133,7 +148,7 @@ Here's the result of our `rss.xml` document after adding a new item;
 &nbsp;
 
 ### Versatility
-#### Invoke from PHP
+#### Invoke from PHP  <a name="exp3"></a>
 We can easily add new web content to the RSS feed via PHP;
 
 ```php
@@ -150,7 +165,7 @@ echo $rss;
 
 &nbsp;
 
-#### Invoke with Cron and Bash (.sh)
+#### Invoke with Cron and Bash (.sh)  <a name="exp4"></a>
 Since this is just a simple command-line script, we can also easily invoke it as a Cron job - I.e. to clean/create a new rss document each week. 
 
 We know our site details won't change, so it is simple as creating a shell script (.sh) and invoking the rssFeed.py from there. Create a shell script (`new_rss.sh`);
